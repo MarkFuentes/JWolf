@@ -5,6 +5,8 @@
  */
 package jwolf;
 
+import org.lwjgl.opengl.Display;
+
 /**
  *
  * @author Mark
@@ -16,6 +18,11 @@ public class JWolf {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        DisplayManager.createDisplay();
+        while(!Display.isCloseRequested()){
+           DisplayManager.updateDisplay();
+        }
+        DisplayManager.closeDisplay();
     }
     
 }
